@@ -9,6 +9,8 @@
 public:
     // 执行图像处理，分为几个步骤
     void processImage();
+    // 1.hsv
+    // 
         
     // 将检测出的图形的坐标转换为机器人世界坐标
     cv::Point2f convertToRobotCoordinates(const cv::Point& imagePoint);
@@ -51,7 +53,6 @@ private:
 
     // 图像检测：十字标志检测
     void detectCrosses();
-
 */
 
 class RobocupFieldProcessor {
@@ -62,6 +63,7 @@ public:
 
     // 执行图像处理，分为几个步骤
     void processImage();
+    // HSV 不能用灰度图
 
     // 获取检测到的白色同心圆的位置(在图片坐标系的坐标)
     std::vector<cv::Point> getDetectedConcentricCircles();
@@ -97,6 +99,14 @@ private:
 
     // 使用聚类算法进行图形拟合
     void clusterAndFitShapes();
+    // 1.原来的图片，画上白色的线，把圆和直线标出来 2.x-y 
+    ··#··
+    ·#·#·
+    ··#·· 15像素块
+      
+      #    
+    #   #
+      #
 
     // 图像检测：白线检测
     void detectWhiteLines();
